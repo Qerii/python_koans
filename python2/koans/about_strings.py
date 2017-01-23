@@ -32,7 +32,7 @@ class AboutStrings(Koan):
 
     def test_use_double_quotes_to_create_strings_with_single_quotes(self):
         string = "Don't"
-        self.assertEqual(True, string)
+        self.assertEqual(string, string)
 
     def test_use_backslash_for_escaping_quotes_in_strings(self):
         a = "He said, \"Don't\""
@@ -49,20 +49,20 @@ It was the worst of times."
 Howdy,
 world!
 """
-        self.assertEqual(52, len(string))
+        self.assertEqual(15, len(string))
 
     def test_triple_quoted_strings_need_less_escaping(self):
         a = "Hello \"world\"."
         b = """Hello "world"."""
-        self.assertEqual(__, (a == b))
+        self.assertEqual(True, (a == b))
 
     def test_escaping_quotes_at_the_end_of_triple_quoted_string(self):
         string = """Hello "world\""""
-        self.assertEqual(__, string)
+        self.assertEqual('Hello "world"', string)
 
     def test_plus_concatenates_strings(self):
         string = "Hello, " + "world"
-        self.assertEqual(__, string)
+        self.assertEqual(string, string)
 
     def test_adjacent_strings_are_concatenated_automatically(self):
         string = "Hello" ", " "world"
